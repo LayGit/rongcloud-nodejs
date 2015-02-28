@@ -1,0 +1,31 @@
+{
+  "name": "rongcloud",
+  "version": "0.0.1",
+  "description": "Rong Cloud Sever API",
+  "main": "rongAPI.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/LayGit/rongcloud-nodejs/src"
+  },
+  "keywords": [
+    "nodejs",
+    "api",
+    "server",
+    "rongcloud"
+  ],
+  "author": {
+    "name": "Lay"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/LayGit/rongcloud-nodejs/issues"
+  },
+  "homepage": "https://github.com/LayGit/rongcloud-nodejs",
+  "dependencies": {
+    "request":"2.53.0"
+  },
+  "readme": "ERROR: No README data found!"
+}
