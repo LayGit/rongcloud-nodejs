@@ -1,6 +1,6 @@
 var Request = require('request');
 var Crypto = require("crypto");
-var SERVER_URL = 'https://api.cn.rong.io/';
+var SERVER_URL = 'https://api.cn.rong.io';
 
 /**
  * 融云API for nodejs 0.0.2
@@ -19,14 +19,13 @@ var RongAPI = function(appKey, appSecret, format){
      * @param callback
      */
     this.request = function(action, params, callback){
-        action = action.charAt(0) == '/' ? action : '/' + action;
 
         var Nonce = getRandomNum(10000, 99999),
             Timestamp = (new Date()).getTime().toString().substr(0, 10),
             sign = sha1(this.appSecret + Nonce + Timestamp);
 
         var options = {
-            url:SERVER_URL + action,
+            url:SERVER_URL + action + "." + this.format,
             method:'POST',
             useQuerystring:true,
             headers:{
@@ -39,10 +38,14 @@ var RongAPI = function(appKey, appSecret, format){
         if (params)
             options.form = params;
         Request(options, function(error, response, body){
+            var hasCallback = callback ? true : false;
+            console.log("Request URL:" + options.url);
+            console.log("Result:" + JSON.stringify(body));
+            console.log("HasCallback:" + hasCallback);
             if (error)
                 throw  error;
-            else
-                callback ? callback(body) : 0;
+            else if (hasCallback)
+                callback(body, response);
         });
     };
 

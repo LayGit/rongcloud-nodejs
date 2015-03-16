@@ -9,6 +9,18 @@
 ```bash
 npm install rongcloud
 ```
+### How to use
+```nodejs
+var RongAPI = require('rongcloud');
+var rongAPI = new RongAPI('您的AppKey', '您的AppSecret');
+rongAPI.user.getToken(100000, '张三', '', function(data){
+    data = JSON.parse(data);
+    if (data.code == 200)
+        console.log("获取Token成功:" + data.token);
+    else
+        console.log("Token获取失败");
+});
+```
 
 [npm-img]: https://img.shields.io/npm/v/rongcloud.svg?style=flat-square
 [npm-url]: https://npmjs.org/package/rongcloud

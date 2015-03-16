@@ -1,6 +1,6 @@
 {
   "name": "rongcloud",
-  "version": "0.0.2",
+  "version": "0.0.9",
   "description": "Rong Cloud Sever API",
   "main": "rongAPI.js",
   "scripts": {
