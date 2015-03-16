@@ -10,7 +10,7 @@
 npm install rongcloud
 ```
 ### How to use
-```nodejs
+```javascript
 var RongAPI = require('rongcloud');
 var rongAPI = new RongAPI('您的AppKey', '您的AppSecret');
 rongAPI.user.getToken(100000, '张三', '', function(data){
